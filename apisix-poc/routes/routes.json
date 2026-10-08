@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "id": "mainetservice-accounts-get-payee-names",
+      "desc": "POC Route 1: Spring MVC REST - Account Payee Names Lookup",
+      "uri": "/MainetService/rest/AccountReceiptEntry/doGetPayeeNames",
+      "methods": ["POST"],
+      "upstream": {
+        "type": "roundrobin",
+        "nodes": {
+          "host.docker.internal:8080": 1
+        },
+        "timeout": {
+          "connect": 6,
+          "send": 6,
+          "read": 60
+        },
+        "pass_host": "pass"
+      },
+      "plugins": {
+        "request-id": {
+          "include_in_response": true
+        }
+      },
+      "status": 1
+    },
+    {
+      "id": "mainetservice-common-license-yearwise-count",
+      "desc": "POC Route 2: Apache CXF REST - Year-wise License Count Statistics",
+      "uri": "/MainetService/services/rest/common/licenseDashboardGraph/getYearWiseLicenseCount",
+      "methods": ["GET"],
+      "upstream": {
+        "type": "roundrobin",
+        "nodes": {
+          "host.docker.internal:8080": 1
+        },
+        "timeout": {
+          "connect": 6,
+          "send": 6,
+          "read": 60
+        },
+        "pass_host": "pass"
+      },
+      "plugins": {
+        "request-id": {
+          "include_in_response": true
+        }
+      },
+      "status": 1
+    }
+  ]
+}

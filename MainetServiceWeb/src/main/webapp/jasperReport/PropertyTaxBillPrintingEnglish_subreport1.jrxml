@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PropertyTaxBillPrintingEnglish_subreport1" pageWidth="600" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="600" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="cec9fe13-e878-4bd9-9902-afb25aa66598">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="currentAmountV" class="java.math.BigDecimal"/>
+	<field name="totalAmountV" class="java.math.BigDecimal"/>
+	<field name="arrearsAmountV" class="java.math.BigDecimal"/>
+	<field name="taxNameV" class="java.lang.String"/>
+	<field name="percentageRate" class="java.lang.Double"/>
+	<field name="firstHalfCurrentAmountV" class="java.math.BigDecimal"/>
+	<field name="secondHalfCurrentAmountV" class="java.math.BigDecimal"/>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="36" height="12" uuid="c4e057e6-9f0d-4b1e-94a6-89d920142b7f"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="35" y="0" width="165" height="12" uuid="7d3a7ee4-9f0d-4ba6-be0d-d6f26d6786d8"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="200" y="0" width="60" height="12" uuid="22b11ce4-4084-496e-81d7-5c7d25ec901b"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="400" y="0" width="70" height="12" isPrintWhenDetailOverflows="true" uuid="0429c373-df08-41ab-9615-045ad8ea50ee"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="330" y="0" width="70" height="12" uuid="f697757a-9137-4692-9418-f7cd4f3ddc90"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="470" y="0" width="90" height="12" uuid="3d7584ca-9858-47f1-9833-7d444be9a696"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="37" y="0" width="163" height="12" isPrintWhenDetailOverflows="true" uuid="7f8bef86-4ecb-434f-8b40-ae3a8240d19d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{taxNameV}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="470" y="0" width="89" height="12" isPrintWhenDetailOverflows="true" uuid="7c6af66a-4edf-4f21-9400-a33b15c04d73"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalAmountV}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="0" width="34" height="12" uuid="81fddbb6-b3c4-4f21-9837-1edf601c197f"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="260" y="0" width="70" height="12" uuid="92988e11-e807-492f-8e4c-893aef3d8f72"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="330" y="0" width="68" height="12" uuid="e38c9028-8786-4c92-97c3-6769f9bd3f1d"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{firstHalfCurrentAmountV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="68" height="12" uuid="a316489b-3245-42d4-aa2c-d3e6e5d1ff7c"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{secondHalfCurrentAmountV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="58" height="12" uuid="4ef8eae0-b715-4afb-a4c7-6ebd3867a6cb"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{percentageRate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="68" height="12" uuid="afa69eb5-776e-4938-b032-d9b9bb98917b"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{arrearsAmountV}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

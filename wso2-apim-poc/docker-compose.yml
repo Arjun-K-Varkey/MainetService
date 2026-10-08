@@ -1,0 +1,16 @@
+﻿version: '3.8'
+
+services:
+  wso2-apim:
+    image: wso2/wso2am:4.7.0
+    container_name: wso2-apim
+    restart: unless-stopped
+    ports:
+      - "8244:8243"   # API Gateway HTTPS (8243 in container)
+      - "9444:9443"   # Management Console / DevPortal / Publisher HTTPS (9443 in container)
+    environment:
+      - TZ=UTC
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./deployment.toml:/home/wso2carbon/wso2am-4.7.0/repository/conf/deployment.toml:ro

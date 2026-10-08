@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PropertyTaxSpecialNotice_subreport1" pageWidth="900" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="900" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ee673d24-68a3-42a2-8076-d3abe10ea198">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="propertyNo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="flatNo" class="java.lang.String"/>
+	<field name="carpetArea" class="java.lang.String"/>
+	<field name="actualRent" class="java.lang.String"/>
+	<field name="roadType" class="java.lang.String"/>
+	<field name="assessAreaV" class="java.lang.String"/>
+	<field name="constructionClassV" class="java.lang.String"/>
+	<field name="usageType1V" class="java.lang.String"/>
+	<field name="floorV" class="java.lang.String"/>
+	<field name="propertyAge" class="java.lang.String"/>
+	<field name="alvV" class="java.lang.String"/>
+	<field name="rvV" class="java.lang.String"/>
+	<field name="constructionClassReg" class="java.lang.String"/>
+	<field name="usageType1Reg" class="java.lang.String"/>
+	<field name="floorReg" class="java.lang.String"/>
+	<field name="roadTypeReg" class="java.lang.String"/>
+	<field name="shastiAmount" class="java.lang.String"/>
+	<field name="standardRateV" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="67" height="30" uuid="27af4df3-f934-4809-8520-ea347dbce839"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="67" y="1" width="60" height="30" uuid="cbb037b8-20c6-43b3-9365-357f6e9bd7e4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="127" y="1" width="60" height="30" uuid="b99e7351-f235-4126-9b33-a9f523260975"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="187" y="1" width="60" height="30" uuid="6ed0362a-0655-4a2e-abb2-a89b9a43e16b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="1" width="149" height="30" uuid="67c94e32-d459-448b-93be-c60784644b38"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="396" y="1" width="97" height="30" uuid="96adbade-cb08-41e7-8551-0d887c6ecc27"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="493" y="1" width="99" height="30" uuid="08b1dae9-bb05-4149-a8da-589d6acd4644"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="592" y="1" width="56" height="30" uuid="9cb7904f-c82a-46f3-b4d8-36cca53bc8ae"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="648" y="1" width="68" height="30" uuid="7cc34502-ee74-43ed-967e-c785be6a00ff"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="716" y="1" width="68" height="30" uuid="ea5f815c-1e09-45d7-a4b7-7204e407238f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="784" y="1" width="75" height="30" uuid="3d9b7b0a-4bbe-4c82-b79c-c58e0a979651"/>
+			</rectangle>
+			<textField>
+				<reportElement x="67" y="1" width="60" height="30" uuid="ccd270a1-20ef-4132-9ee2-124c8ff1d52f"/>
+				<textFieldExpression><![CDATA[$F{carpetArea}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="1" width="60" height="30" uuid="c99015d7-5286-4f4b-ba89-a30bf834ecb6"/>
+				<textFieldExpression><![CDATA[$F{assessAreaV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="1" width="149" height="30" uuid="e293b157-c656-46b3-8931-c2b2be5f4d81"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{constructionClassV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="1" width="97" height="30" uuid="b081363a-ae95-4178-abbb-1549f9827a8f"/>
+				<textFieldExpression><![CDATA[$F{usageType1V}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="493" y="1" width="99" height="30" uuid="3d0bc911-a57f-4e91-83cf-fc0770f5d211"/>
+				<textFieldExpression><![CDATA[$F{roadType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="592" y="1" width="55" height="30" uuid="1f01ce99-6987-416a-9b1f-f7b1a47046f6"/>
+				<textFieldExpression><![CDATA[$F{propertyAge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="1" width="68" height="30" uuid="647e7881-889e-476f-ac9e-5c53a38c6600"/>
+				<textFieldExpression><![CDATA[$F{alvV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="716" y="1" width="68" height="30" uuid="48c9f1d8-c838-4a2c-a5e9-20dc343a1f22"/>
+				<textFieldExpression><![CDATA[$F{rvV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="784" y="1" width="75" height="30" uuid="f9abb740-b5bb-4d51-9a24-6a9bc798e47e"/>
+				<textFieldExpression><![CDATA[$F{shastiAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="1" width="60" height="30" uuid="0643056e-f88f-4734-a569-5e0b2fe0cabe"/>
+				<textFieldExpression><![CDATA[$F{standardRateV}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="1" width="67" height="30" uuid="2143c38b-83d5-4ff5-9828-e72c89b7519e"/>
+				<textFieldExpression><![CDATA[$F{flatNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="527" y="2" width="332" height="16" uuid="e5afba41-4d48-43b8-8e8f-7f211d0ad1db"/>
+				<textElement textAlignment="Center">
+					<font fontName="AkrutiDevNewPriya" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[ cenejeä^ ceneveiej HeeefueJeÀe DeefOevee³eceeleerue JeÀuece 267 De ÒeceeCes Meemleerme Hee$e ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

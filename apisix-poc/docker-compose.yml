@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  etcd:
+    image: bitnamilegacy/etcd:3.5.11
+    container_name: apisix-etcd
+    restart: always
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ENABLE_V2=true
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+    ports:
+      - "2379:2379"
+    networks:
+      - apisix-net
+
+  apisix:
+    image: apache/apisix:3.9.1-debian
+    container_name: apisix-gateway
+    restart: always
+    depends_on:
+      - etcd
+    ports:
+      - "9080:9080" # APISIX HTTP listener
+      - "9180:9180" # APISIX Admin API listener
+      - "9443:9443" # APISIX HTTPS listener
+    volumes:
+      - ./apisix_conf/config.yaml:/usr/local/apisix/conf/config.yaml:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - apisix-net
+
+networks:
+  apisix-net:
+    name: apisix-poc-net
+    driver: bridge

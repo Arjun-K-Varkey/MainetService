@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="WaterMeterBillPrintingReport_subreport1" pageWidth="605" pageHeight="841" columnWidth="605" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="461a44dd-d904-4e91-8f14-2e199aec6283">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="currentMeterReading" class="java.lang.Long"/>
+	<field name="currentMeterReadingDate" class="java.lang.String"/>
+	<field name="prevMeterReading" class="java.lang.Long"/>
+	<field name="prevReadingDate" class="java.lang.String"/>
+	<field name="consumption" class="java.lang.Double"/>
+	<field name="gapCode" class="java.lang.String"/>
+	<field name="tariffAmount" class="java.lang.Double"/>
+	<field name="currentBillAmt" class="java.lang.Double"/>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="95" height="12" uuid="de44b96d-9aae-4f60-9ae7-fec2e4266cb4"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="95" y="0" width="55" height="12" uuid="5ccc9576-023a-40aa-b368-d4530765c518"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="0" width="50" height="12" uuid="7aceb146-ee07-425e-91ca-73f44f40b35c"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="200" y="0" width="55" height="12" uuid="57235e6e-58f2-46fe-b466-17a50b4def97"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="255" y="0" width="50" height="12" uuid="1ee7e28f-6093-4e12-ab20-5ef3b21bfb55"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="305" y="0" width="50" height="12" uuid="0ac02752-fcbd-42cf-912f-0a1c17ec68da"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="355" y="0" width="50" height="12" uuid="89c6a3da-1336-4128-b50c-182e8e1ba666"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="405" y="0" width="50" height="12" uuid="2467f967-31f4-4e84-856a-e323d4a5644c"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="455" y="0" width="50" height="12" uuid="43565018-d6dc-44ce-9aef-b3a9ab89b356"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="505" y="0" width="50" height="12" uuid="7c00241d-e5e3-4407-a9f2-517ead055cef"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="0" width="95" height="12" isPrintWhenDetailOverflows="true" uuid="cff0eab4-39ec-44db-a01b-2b9a5607c06d"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gapCode}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="95" y="0" width="55" height="12" isPrintWhenDetailOverflows="true" uuid="baf06ccb-b57c-4b0a-8f63-a6221f8202e4"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prevReadingDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="150" y="0" width="50" height="12" isPrintWhenDetailOverflows="true" uuid="ec762575-49d3-41d7-9a9b-d29d5699bab8"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prevMeterReading}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="200" y="0" width="55" height="12" isPrintWhenDetailOverflows="true" uuid="ab8c84d5-453e-4b5f-b22b-2efd01837004"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currentMeterReadingDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="255" y="0" width="50" height="12" isPrintWhenDetailOverflows="true" uuid="b6cb936b-18cc-4ac8-9c12-d275e9e3b1c6"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currentMeterReading}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="304" y="0" width="50" height="12" isPrintWhenDetailOverflows="true" uuid="3a08ec9e-97ff-4e2d-b70d-70132942a875"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{consumption}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="454" y="0" width="50" height="12" isPrintWhenDetailOverflows="true" uuid="5bff3b0f-44aa-468f-9390-237903ecee6b"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tariffAmount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="504" y="0" width="50" height="12" isPrintWhenDetailOverflows="true" uuid="ac7d2f59-3202-40bd-8c14-d834b9fef7fe"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currentBillAmt}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="404" y="0" width="50" height="12" isPrintWhenDetailOverflows="true" uuid="b54643bd-dd7e-400b-a472-81d94c06d70a"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{consumption}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
