@@ -77,7 +77,9 @@ The following categories were explicitly excluded from the migration:
 ## 7. Git & GitHub Verification
 
 - **Default Branch**: `main`
-- **Initial Commit Message**: `Initial import of MainetService`
+- **Initial Commit Hash**: 7d4543be4c2a70044ca8d1d25c97845f9083ffb6
+- **Initial Commit Message**: Initial import of MainetService
+- **Remote URL**: https://github.com/Arjun-K-Varkey/MainetService.git
 - **Repository Visibility**: `PRIVATE`
 - **Working Tree**: Clean
 
