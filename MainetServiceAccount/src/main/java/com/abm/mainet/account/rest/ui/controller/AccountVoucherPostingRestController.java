@@ -84,7 +84,7 @@ public class AccountVoucherPostingRestController {
         @ApiResponse(code = 401, message = "Authentication or checksum validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/doPosting", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> doVoucherPosting(@RequestBody final VoucherPostListDTO dto, HttpServletRequest request)  {
 		
@@ -169,7 +169,7 @@ public class AccountVoucherPostingRestController {
         @ApiResponse(code = 401, message = "Authentication or checksum validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/doReversePosting", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> doVoucherReversePosting(@RequestBody final VoucherReversePostDTO voucherPostDTO)
             throws IllegalAccessException, InvocationTargetException {
@@ -219,7 +219,7 @@ public class AccountVoucherPostingRestController {
         @ApiResponse(code = 401, message = "Authentication or checksum validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/voucherPostValidateInput", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> voucherPostValidateInput(@RequestBody final VoucherPostListDTO dto) {
         List<VoucherPostDTO> voucherPostDTO = dto.getVoucherdto();
@@ -331,7 +331,7 @@ public class AccountVoucherPostingRestController {
         @ApiResponse(code = 401, message = "Authentication or checksum validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/doExtSysVoucherPosting", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = {MediaType.ALL_VALUE,MediaType.APPLICATION_XML_VALUE,MediaType.TEXT_PLAIN_VALUE })
     public ResponseEntity<?> doExtSysVoucherPosting(@RequestBody final String inputRequest,
             HttpServletRequest request) {
