@@ -117,7 +117,7 @@ public class AccountReceiptEntryRestController {
         @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/doGetPayeeNames", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getPayeeNames(@RequestBody final AccountReceiptDTO accountReceiptDTO) {
 
@@ -158,7 +158,7 @@ public class AccountReceiptEntryRestController {
         @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/getReceiptRecordsOnSearch", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getReceiptRecordsOnSearch(@RequestBody final AccountReceiptDTO accountReceiptDTO) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -209,7 +209,7 @@ public class AccountReceiptEntryRestController {
         @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/getReceiptDataForView", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getReceiptDataForView(@RequestBody AccountReceiptDTO accountReceiptDTO) {
 
@@ -245,7 +245,7 @@ public class AccountReceiptEntryRestController {
         @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/getVendorList", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getVendorList(@RequestBody final AccountReceiptDTO accountReceiptDTO) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -296,7 +296,7 @@ public class AccountReceiptEntryRestController {
         @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/getBankList", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getBankList(@RequestBody AccountReceiptDTO accountReceiptDTO) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -343,7 +343,7 @@ public class AccountReceiptEntryRestController {
         @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/getReceiptHeadList", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> budgetHeadList(@RequestBody AccountReceiptDTO accountReceiptDTO) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -391,7 +391,7 @@ public class AccountReceiptEntryRestController {
         @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
         @ApiResponse(code = 404, message = "Requested data was not found"),
         @ApiResponse(code = 500, message = "Internal server error")
-    )
+    })
     @RequestMapping(value = "/saveReceipt", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> saveReceipt(@RequestBody final AccountReceiptDTO accountReceiptDTO)
             throws ParseException, Exception {
@@ -628,7 +628,7 @@ public class AccountReceiptEntryRestController {
 	    @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
 	    @ApiResponse(code = 404, message = "Requested data was not found"),
 	    @ApiResponse(code = 500, message = "Internal server error")
-	)
+	})
 	@RequestMapping(value = "/saveExternalReceipt", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
 	public ResponseEntity<?> saveExternalReceipt(@RequestBody final String inputRequest, HttpServletRequest request) {
 
@@ -682,7 +682,7 @@ public class AccountReceiptEntryRestController {
 	    @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
 	    @ApiResponse(code = 404, message = "Requested data was not found"),
 	    @ApiResponse(code = 500, message = "Internal server error")
-	)
+	})
 	@RequestMapping(value = "/iciciOneWindowReceiptPosting", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
 	public ResponseEntity<?> iciciOneWindowCallback(@RequestBody final ICICIOneWindowTransactionDTO transactionDTO,
 			HttpServletRequest request) {
