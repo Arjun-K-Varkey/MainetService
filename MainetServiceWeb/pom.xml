@@ -28,6 +28,12 @@
 			<artifactId>MainetServiceAccount</artifactId>
 			<version>${mainet.service.account.version}</version>
 		</dependency>
+		<!-- Generates Swagger 2 JSON from annotated Spring MVC REST controllers. -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+		</dependency>
 		 <dependency>
 			<groupId>com.abm.mainet</groupId>
 			<artifactId>MainetServiceWater</artifactId>
