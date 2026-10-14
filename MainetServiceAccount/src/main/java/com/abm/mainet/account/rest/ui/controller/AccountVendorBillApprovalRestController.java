@@ -1,5 +1,10 @@
 package com.abm.mainet.account.rest.ui.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -44,6 +49,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author tejas.kotekar
  * @since 1-Apr-2017
  */
+@Api(tags = "Vendor Bill Approval", description = "Accounts vendor bill approval REST operations.")
 @ServletSecurity(httpMethodConstraints = {
         @HttpMethodConstraint(value = "POST", transportGuarantee = TransportGuarantee.CONFIDENTIAL) })
 @RestController
@@ -81,6 +87,13 @@ public class AccountVendorBillApprovalRestController {
      * @return instance of {@code ResponseEntity} ,check status code to ensure whether records fetched or not.
      *
      */
+    @ApiOperation(value = "Search vendor bill approval records.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/getBillRecords", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getAvailableRecordsOnSearch(@RequestBody final VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -111,6 +124,13 @@ public class AccountVendorBillApprovalRestController {
         return responseEntity;
     }
 
+    @ApiOperation(value = "Retrieve a vendor bill record for viewing.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/recordForView", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getRecordForView(@RequestBody VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -142,6 +162,13 @@ public class AccountVendorBillApprovalRestController {
         return responseEntity;
     }
 
+    @ApiOperation(value = "Retrieve a vendor bill record for editing.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/recordForEdit", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getRecordForEdit(@RequestBody VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -167,6 +194,13 @@ public class AccountVendorBillApprovalRestController {
         return responseEntity;
     }
 
+    @ApiOperation(value = "Save vendor bill approval.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/doSaveBillApproval", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> saveBillApproval(@RequestBody final VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -194,6 +228,13 @@ public class AccountVendorBillApprovalRestController {
         return responseEntity;
     }
 
+    @ApiOperation(value = "Retrieve vendor names for the organisation and language.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/getVendorNames", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getVendorNames(@RequestBody VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -224,6 +265,13 @@ public class AccountVendorBillApprovalRestController {
         return responseEntity;
     }
 
+    @ApiOperation(value = "Retrieve departments for the organisation.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/getDepartments", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getDepartments(@RequestBody final VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -255,6 +303,13 @@ public class AccountVendorBillApprovalRestController {
         return responseEntity;
     }
 
+    @ApiOperation(value = "Resolve the department from budget code and financial year.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/getDepartmentId", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getDepartmentIdByBudgetCode(@RequestBody final VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -294,6 +349,13 @@ public class AccountVendorBillApprovalRestController {
         return responseEntity;
     }
 
+    @ApiOperation(value = "Retrieve expenditure details.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/getExpenditureDetails", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getExpenditureDetails(@RequestBody VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -324,6 +386,13 @@ public class AccountVendorBillApprovalRestController {
         return responseEntity;
     }
 
+    @ApiOperation(value = "Retrieve deduction details.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/getDeductionDetails", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> geDeductionDetails(@RequestBody VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -354,6 +423,13 @@ public class AccountVendorBillApprovalRestController {
         return responseEntity;
     }
 
+    @ApiOperation(value = "Retrieve expenditure details for viewing.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/viewExpenditureDetails", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> viewExpenditureDetails(@RequestBody VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -384,6 +460,13 @@ public class AccountVendorBillApprovalRestController {
         return responseEntity;
     }
 
+    @ApiOperation(value = "Retrieve salary bill budget details.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/viewSalaryBillBudgetDetails", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> viewInvoiceSalaryBillBudgetDetails(@RequestBody VendorBillApprovalDTO vendorApprovalDto) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -431,6 +514,13 @@ public class AccountVendorBillApprovalRestController {
     }
 
     
+    @ApiOperation(value = "Save vendor bill approval from an external integration. The request body contains encrypted input.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    )
     @RequestMapping(value = "/doExtSaveBillApproval", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> saveExtBillApproval(@RequestBody final String inputRequest,HttpServletRequest request) {
 		final ApplicationSession session = ApplicationSession.getInstance();
