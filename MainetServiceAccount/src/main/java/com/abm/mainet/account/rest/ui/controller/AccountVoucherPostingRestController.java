@@ -1,5 +1,10 @@
 package com.abm.mainet.account.rest.ui.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -51,6 +56,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author Vivek.Kumar
  * @since 08 Feb 2017
  */
+@Api(tags = "Voucher Posting", description = "Accounts voucher posting and validation REST operations.")
 @ServletSecurity(httpMethodConstraints = {
         @HttpMethodConstraint(value = "POST", transportGuarantee = TransportGuarantee.CONFIDENTIAL) })
 @RestController
@@ -71,6 +77,14 @@ public class AccountVoucherPostingRestController {
      * @return instance of {@code ResponseEntity} ,check status code to ensure whether posting success or failed.
      *
      */
+    @ApiOperation(value = "Post an account voucher.", notes = "Documents the existing active legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 401, message = "Authentication or checksum validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/doPosting", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> doVoucherPosting(@RequestBody final VoucherPostListDTO dto, HttpServletRequest request)  {
 		
@@ -148,6 +162,14 @@ public class AccountVoucherPostingRestController {
       }
 
 
+    @ApiOperation(value = "Reverse a posted account voucher.", notes = "Documents the existing active legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 401, message = "Authentication or checksum validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/doReversePosting", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> doVoucherReversePosting(@RequestBody final VoucherReversePostDTO voucherPostDTO)
             throws IllegalAccessException, InvocationTargetException {
@@ -190,6 +212,14 @@ public class AccountVoucherPostingRestController {
      */
     
     //
+    @ApiOperation(value = "Validate account voucher posting input.", notes = "Documents the existing active legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 401, message = "Authentication or checksum validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/voucherPostValidateInput", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> voucherPostValidateInput(@RequestBody final VoucherPostListDTO dto) {
         List<VoucherPostDTO> voucherPostDTO = dto.getVoucherdto();
@@ -294,6 +324,14 @@ public class AccountVoucherPostingRestController {
         }
     }*/
     //above method is commented becuse it is rewrite for external service
+    @ApiOperation(value = "Post a voucher received from an external system. The request uses the existing encrypted/checksum contract.", notes = "Documents the existing active legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 401, message = "Authentication or checksum validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/doExtSysVoucherPosting", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = {MediaType.ALL_VALUE,MediaType.APPLICATION_XML_VALUE,MediaType.TEXT_PLAIN_VALUE })
     public ResponseEntity<?> doExtSysVoucherPosting(@RequestBody final String inputRequest,
             HttpServletRequest request) {

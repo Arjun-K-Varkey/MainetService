@@ -6,6 +6,12 @@
 	<groupId>com.abm.mainet</groupId>
 
 	<dependencies>
+		<!-- Swagger 2 annotations for the legacy Java 8 / Spring MVC 4 REST controllers. -->
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>1.5.10</version>
+		</dependency>
 		<dependency>
 			<groupId>com.abm.mainet</groupId>
 			<artifactId>MainetServiceCommon</artifactId>

@@ -1,5 +1,10 @@
 package com.abm.mainet.account.rest.ui.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -63,6 +68,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author Prasad.kancharla
  * @since 01-Mar-2017
  */
+@Api(tags = "Receipt Entry", description = "Accounts receipt entry REST operations.")
 @ServletSecurity(httpMethodConstraints = {
         @HttpMethodConstraint(value = "POST", transportGuarantee = TransportGuarantee.CONFIDENTIAL) })
 @RestController
@@ -105,6 +111,13 @@ public class AccountReceiptEntryRestController {
      * @return instance of {@code ResponseEntity} ,check status code to ensure whether posting success or failed.
      *
      */
+    @ApiOperation(value = "Get available payee names for the organisation.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/doGetPayeeNames", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getPayeeNames(@RequestBody final AccountReceiptDTO accountReceiptDTO) {
 
@@ -139,6 +152,13 @@ public class AccountReceiptEntryRestController {
      * @return instance of {@code ResponseEntity} ,check status code to ensure whether posting success or failed.
      *
      */
+    @ApiOperation(value = "Search receipt records using the supplied criteria.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/getReceiptRecordsOnSearch", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getReceiptRecordsOnSearch(@RequestBody final AccountReceiptDTO accountReceiptDTO) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -183,6 +203,13 @@ public class AccountReceiptEntryRestController {
      * @return instance of {@code ResponseEntity} ,check status code to ensure whether posting success or failed.
      *
      */
+    @ApiOperation(value = "Retrieve a receipt record for viewing.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/getReceiptDataForView", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getReceiptDataForView(@RequestBody AccountReceiptDTO accountReceiptDTO) {
 
@@ -212,6 +239,13 @@ public class AccountReceiptEntryRestController {
      * @return instance of {@code ResponseEntity} ,check status code to ensure whether posting success or failed.
      *
      */
+    @ApiOperation(value = "Retrieve active vendors for receipt entry.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/getVendorList", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getVendorList(@RequestBody final AccountReceiptDTO accountReceiptDTO) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -256,6 +290,13 @@ public class AccountReceiptEntryRestController {
      * @return instance of {@code ResponseEntity} ,check status code to ensure whether posting success or failed.
      *
      */
+    @ApiOperation(value = "Retrieve active bank accounts for receipt entry.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/getBankList", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> getBankList(@RequestBody AccountReceiptDTO accountReceiptDTO) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -296,6 +337,13 @@ public class AccountReceiptEntryRestController {
      * @return instance of {@code ResponseEntity} ,check status code to ensure whether posting success or failed.
      *
      */
+    @ApiOperation(value = "Retrieve available receipt budget heads.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/getReceiptHeadList", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> budgetHeadList(@RequestBody AccountReceiptDTO accountReceiptDTO) {
         final ApplicationSession session = ApplicationSession.getInstance();
@@ -337,6 +385,13 @@ public class AccountReceiptEntryRestController {
      * @throws ParseException
      *
      */
+    @ApiOperation(value = "Save an account receipt.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Request processed; see response body"),
+        @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+        @ApiResponse(code = 404, message = "Requested data was not found"),
+        @ApiResponse(code = 500, message = "Internal server error")
+    })
     @RequestMapping(value = "/saveReceipt", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<?> saveReceipt(@RequestBody final AccountReceiptDTO accountReceiptDTO)
             throws ParseException, Exception {
@@ -567,6 +622,13 @@ public class AccountReceiptEntryRestController {
         return accountReceiptDTO;
     }
 
+	@ApiOperation(value = "Save a receipt submitted by an external integration. The request body contains encrypted input.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+	@ApiResponses({
+	    @ApiResponse(code = 200, message = "Request processed; see response body"),
+	    @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+	    @ApiResponse(code = 404, message = "Requested data was not found"),
+	    @ApiResponse(code = 500, message = "Internal server error")
+	})
 	@RequestMapping(value = "/saveExternalReceipt", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
 	public ResponseEntity<?> saveExternalReceipt(@RequestBody final String inputRequest, HttpServletRequest request) {
 
@@ -614,6 +676,13 @@ public class AccountReceiptEntryRestController {
 		
 	}
 
+	@ApiOperation(value = "Process the ICICI One Window receipt callback.", notes = "Documents the existing legacy endpoint; implementation remains unchanged.")
+	@ApiResponses({
+	    @ApiResponse(code = 200, message = "Request processed; see response body"),
+	    @ApiResponse(code = 400, message = "Invalid request or business validation failed"),
+	    @ApiResponse(code = 404, message = "Requested data was not found"),
+	    @ApiResponse(code = 500, message = "Internal server error")
+	})
 	@RequestMapping(value = "/iciciOneWindowReceiptPosting", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
 	public ResponseEntity<?> iciciOneWindowCallback(@RequestBody final ICICIOneWindowTransactionDTO transactionDTO,
 			HttpServletRequest request) {
