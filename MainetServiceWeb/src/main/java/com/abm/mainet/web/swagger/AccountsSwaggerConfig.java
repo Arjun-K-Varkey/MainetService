@@ -5,7 +5,8 @@ import org.springframework.context.annotation.Configuration;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -30,13 +31,14 @@ public class AccountsSwaggerConfig {
                 .paths(PathSelectors.any())
                 .build()
                 .pathMapping("/rest")
-                .apiInfo(new ApiInfo(
-                        "MainetService Accounts REST API",
-                        "Receipt Entry, Vendor Bill Approval and Voucher Posting REST operations.",
-                        "1.0.0",
-                        "",
-                        null,
-                        "",
-                        ""));
+                .apiInfo(new ApiInfoBuilder()
+                        .title("MainetService Accounts REST API")
+                        .description("Receipt Entry, Vendor Bill Approval and Voucher Posting REST operations.")
+                        .version("1.0.0")
+                        .termsOfServiceUrl("")
+                        .contact(new Contact("", "", ""))
+                        .license("")
+                        .licenseUrl("")
+                        .build());
     }
 }
